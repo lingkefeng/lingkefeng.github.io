@@ -1,148 +1,192 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>深度学习之关键概念解析 | 灵客风</title>
-<meta name="description" content="温故而知新">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lingkefeng.github.io//favicon.ico?v=1561598738284">
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    深度学习之关键概念解析 | 灵客风
+</title>
+<link rel="shortcut icon" href="https://lingkefeng.github.io//favicon.ico?v=1562465780454">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://lingkefeng.github.io//styles/main.css">
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://lingkefeng.github.io//media/js/jquery.sticky-sidebar.min.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main">
+        
+</head>
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://lingkefeng.github.io/">
-        <img src="https://lingkefeng.github.io//images/avatar.png?v=1561598738284" class="site-logo">
-        <h1 class="site-title">灵客风</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://lingkefeng.github.io/">
+                <img class="avatar" src="https://lingkefeng.github.io//images/avatar.png?v=1562465780454" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    灵客风
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      温故而知新
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lingkefeng.github.io//atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
 </div>
 
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">深度学习之关键概念解析</h2>
-            <div class="post-date">2019-06-24</div>
-            
-            <div class="post-content">
-              <p>在深度学习的过程中，很多关键性的概念和术语需要我们理解和体会，比如卷积运算、激活函数、梯度下降等，下面介绍深度学习中几个比较关键的概念</p>
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            深度学习之关键概念解析
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-06-24</time>
+                            
+                                <a href="https://lingkefeng.github.io//tag/LdAt-Nvwb" class="post-tag i-tag
+                            i-tag-info">
+                            #卷积神经网络
+                        </a>
+                                
+                        </div>
+                        
+                                <div class="post-content">
+                                    <p>在深度学习的过程中，很多关键性的概念和术语需要我们理解和体会，比如卷积运算、激活函数、梯度下降等，下面介绍深度学习中几个比较关键的概念</p>
 <p><strong>Epochs</strong></p>
 <p>一个Epoch表示整个数据集通过神经网络前后传递一次，在实际训练过程中，我们往往需要使用不止一个Epoch，因为我们使用的是有限的数据集，并使用梯度下降的优化学习是一个迭代的过程，遍历一次或一个Epoch来更新权重是不够的，一个Epoch会导致下图中的曲线拟合不足：
 <img src="https://mmbiz.qpic.cn/mmbiz_png/KYSDTmOVZvo461kFHGGPf94ic1TlFzMslJS2xFe8R4Bnd7CAXasdOs5NavZaaAUFOkxHFWNwOmbPbEZAnuBOQAw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="">
 随着epochs数量的增加，神经网络中权重变化的次数越多，曲线由欠拟合变为最优，再变为过拟合。那么在实际训练工程中，正确的Epochs的数量应该设置为多少，这个问题没有正确的答案。对于不同的数据集，答案是不同的，但是，你可以说，Epoch的数量跟你的数据集的多样性有关。</p>
 <p><strong>Batch Size</strong></p>
 <p>Batch是什么，在不能将训练集数据一次性通过神经网络的时候，就需要将数据集分成几个batch。Batch Size表示一个Batch中的样本总数。</p>
+<p><strong>Ground Truth</strong>
+在有监督的学习中，数据是有标注的，以（x,t）的形式出现，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>是输入数据，t是标注，正确的标注就是ground truth</p>
 
-            </div>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://lingkefeng.github.io//images/avatar.png?v=1562465780454)">
+        </div>
+        <h1 class="id_card-title">
+            灵客风
+        </h1>
+        <h2 class="id_card-description">
+            温故而知新
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
             
-              <div class="tag-container">
-                
-                  <a href="https://lingkefeng.github.io//tag/LdAt-Nvwb" class="tag">
-                    卷积神经网络
-                  </a>
-                
-              </div>
-            
-            
-
-            
-
-          </div>
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
         </div>
-      </div>
     </div>
+    
+                                    
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                </div>
 
-<script type="application/javascript">
 
-AOS.init();
 
-hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+            </div>
 
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://lingkefeng.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
 </script>
 
 
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
+</body>
 
-
-  </body>
 </html>

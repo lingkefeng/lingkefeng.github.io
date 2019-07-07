@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lingkefeng.github.io/</id>
     <title>灵客风</title>
-    <updated>2019-06-27T01:26:31.490Z</updated>
+    <updated>2019-07-07T02:16:23.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lingkefeng.github.io/"/>
     <link rel="self" href="https://lingkefeng.github.io//atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://lingkefeng.github.io//images/avatar.png</logo>
     <icon>https://lingkefeng.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 灵客风</rights>
+    <entry>
+        <title type="html"><![CDATA[Visual Studio 激活密钥收集]]></title>
+        <id>https://lingkefeng.github.io//post/visual-studio-ji-huo-mi-yao-shou-ji</id>
+        <link href="https://lingkefeng.github.io//post/visual-studio-ji-huo-mi-yao-shou-ji">
+        </link>
+        <updated>2019-06-27T01:49:24.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[深度学习之关键概念解析]]></title>
         <id>https://lingkefeng.github.io//post/sdxxzgjgnjx</id>
