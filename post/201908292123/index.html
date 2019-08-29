@@ -5,7 +5,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    灵客风
+    机器学习之训练集、验证集和测试集 | 灵客风
 </title>
 <link rel="shortcut icon" href="https://lingkefeng.github.io//favicon.ico?v=1567085001652">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
@@ -19,6 +19,7 @@
 <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
+        
 </head>
 
 <body>
@@ -93,54 +94,85 @@
     });
 </script>
 
-            
-
-    <div class="archives-container main-container">
-        <ul class="timeline">
-            
-                <li>
-                    <h3 class="year">
-                        2019
-                    </h3>
-                    <ul class="year-wrapper">
+            <div id="main-content" class="post-detail main-container">
+                <!-- left -->
+                <div id="content" class="main-container-left">
+                    <article class="post i-card">
+                        <h2 class="post-title">
+                            机器学习之训练集、验证集和测试集
+                        </h2>
+                        <div class="post-info">
+                            <time class="post-time">2019-08-29</time>
+                            
+                        </div>
                         
-                            
-                                <li>
-                                    <span class="date">2019-08-29</span>
-                                    <a class="title" href="https://lingkefeng.github.io//post/201908292123">
-                                        <span>机器学习之训练集、验证集和测试集</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-06-27</span>
-                                    <a class="title" href="https://lingkefeng.github.io//post/visual-studio-ji-huo-mi-yao-shou-ji">
-                                        <span>Visual Studio 激活密钥收集</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2019-06-24</span>
-                                    <a class="title" href="https://lingkefeng.github.io//post/sdxxzgjgnjx">
-                                        <span>深度学习之关键概念解析</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                    </ul>
+                                <div class="post-content">
+                                    <p>机器学习大致分为以下三个过程：
+1、使用大量和任务相关的数据集进行训练
+2、通过模型在数据集上的误差不断迭代训练模型，获得与数据集拟合合理的模型
+3、将训练好调整好的模型应用于真实的场景中</p>
+<p>在训练集上训练模型，在验证集上评估模型调整以获得最佳的参数，在测试集上测试模型，将测试误差作为最终的泛化误差</p>
 
-                </li>
+                                </div>
+                    </article>
+                    <!--  -->
+                    
+                        <div class="next-post">
+                            <div class="next">下一篇</div>
+                            <a href="https://lingkefeng.github.io//post/visual-studio-ji-huo-mi-yao-shou-ji">
+                                <h3 class="post-title">
+                                    Visual Studio 激活密钥收集
+                                </h3>
+                            </a>
+                        </div>
+                        
+                            <div id="disqus_thread"></div>
+                            <div id="gitalk-container"></div>
+                </div>
+                <!-- middle -->
+                <div class="main-container-middle"></div>
+                <!-- right -->
+                <div id="sidebar" class="main-container-right">
+                    
+                                <!-- id-card -->
+                                
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://lingkefeng.github.io//images/avatar.png?v=1567085001652)">
+        </div>
+        <h1 class="id_card-title">
+            灵客风
+        </h1>
+        <h2 class="id_card-description">
+            温故而知新
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                <a href="https://github.com/lingkefeng" target="_blank" rel="noopener noreferrer"><i
+                class="fa fa-github"></i></a>
                 
-        </ul>
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
+
+        </div>
     </div>
+    
+                                    
 
-                
+                </div>
 
-                    <div class="site-footer">
+
+
+
+            </div>
+
+
+            <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
   <a class="rss" href="https://lingkefeng.github.io//atom.xml" target="_blank">RSS</a>
 </div>
@@ -149,7 +181,15 @@
   hljs.initHighlightingOnLoad()
 </script>
 
+
     </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
+    
 </body>
 
 </html>
